@@ -2,6 +2,7 @@
   <div id="app">
     <h1>{{ title }}</h1>
     <p class="desc">This is my css <span class="playground" v-for="letter in letters">{{letter}}</span>.</p>
+    <p class="desc">Pick a <span class="desc-dot">dot.</span></p>
     <Bubble />
   </div>
 </template>
@@ -82,6 +83,26 @@ h1 {
         animation-timing-function: ease;
       }
 
+    }
+  }
+  .desc-dot {
+    color: #d299c2;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      background: #000;
+      display: inline-block;
+      border-radius: 50%;
+      width: 48px;
+      height: 48px;
+      left: -5px;
+      top: -10px;
+      z-index: -1;
+      -webkit-box-shadow: 0px 20px 55px -9px rgba(0,0,0,0.75);
+      -moz-box-shadow: 0px 20px 55px -9px rgba(0,0,0,0.75);
+      box-shadow: 0px 20px 55px -9px rgba(0,0,0,0.75);
     }
   }
 }
